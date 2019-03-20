@@ -16,7 +16,7 @@ sys.path.append("..")
 path="/home/deola/MANI_CIRUIT.s2p.csv"
 
 ###########################################################################################################
-def DataClean():
+def data_clean():
 
     dataTest =pd.read_excel("/home/deola/MANI_CIRUIT.s2p.xlsx")
     #print (dataTest)
@@ -42,13 +42,13 @@ def DataClean():
     dataTest.to_csv("/home/deola/MANI_CIRUIT.s2p.csv")
     
 ##################################################################################################    
-def ExecToCSV():
+def exec_to_csv():
     dataTest =pd.read_excel("/home/deola/CE_CASCODE_KESI_DEGE_1.csv.xlsx")
     print (dataTest)
     #dataTest=pd.DataFrame(dataTest.values)
     #dataTest.to_csv("/home/deola/CE_CASCODE_KESI_DEGE_1.csv.csv")
 #############################################################################################################
-def GetArray(indexMag, indexAng):
+def get_array(indexMag, indexAng):
     mag=list()
     ang=list()
     res=list()
@@ -62,7 +62,7 @@ def GetArray(indexMag, indexAng):
     print (ang )
     
 #############################################################################################################
-def PolarToRectangluar(indexMag, indexAng, Angval=False):
+def polar_to_rectangluar(indexMag, indexAng, Angval=False):
     mag=list()
     ang=list()
     res=list()
@@ -86,7 +86,7 @@ def PolarToRectangluar(indexMag, indexAng, Angval=False):
 
     
 ############################################################################################################
-def CreateCSV(name):
+def create_csv(name):
      
     
     val_S11Re=PolarToRectangluar(2,3)
@@ -110,7 +110,7 @@ def CreateCSV(name):
     val.to_csv("/home/deola/%s"%(name))
     print("CSV completed")
 #########################################################################################################################    
-def SmithPlotting(name):
+def smith_plotting(name):
     
     data=pd.read_csv("/home/deola/%s"%(name))
     data=data.values
@@ -154,7 +154,7 @@ def SmithPlotting(name):
     print("Finish plotting")
     
 ############################################################################################################################
-def PlotNoise():
+def plot_noise():
     
     data = np.loadtxt("/home/deola/Documents/Paper_for_Bottle_classification/Dr_Kcee/testing_noise_plotting_D.s2p.csv", delimiter=",", skiprows=1)[::10]
     data1 = np.loadtxt("/home/deola/Documents/Paper_for_Bottle_classification/Dr_Kcee/testing_noise_plotting_ND.s2p.csv", delimiter=",", skiprows=1)[::10]
@@ -174,7 +174,7 @@ def PlotNoise():
     print("Finish plotting")
     #pp.show()
 #################################################################################################################
-def PlotGain():
+def plot_gain():
     
     data = np.loadtxt("/home/deola/Documents/Paper_for_Bottle_classification/Dr_Kcee/gAIN_testing_noise_plotting_D1.s2p.csv", delimiter=",", skiprows=1)[::10]
     data1 = np.loadtxt("/home/deola/Documents/Paper_for_Bottle_classification/Dr_Kcee/gAIN_testing_noise_plotting_ND1.s2p.csv", delimiter=",", skiprows=1)[::10]
@@ -195,7 +195,7 @@ def PlotGain():
     
     
 ################################################################################################################
-def PlotCombo():
+def plot_combo():
     
     data = np.loadtxt("/home/deola/Documents/Paper_for_Bottle_classification/Dr_Kcee/testing_noise_plotting_D.s2p.csv", delimiter=",", skiprows=1)[::1]
     data1 = np.loadtxt("/home/deola/Documents/Paper_for_Bottle_classification/Dr_Kcee/testing_noise_plotting_ND.s2p.csv", delimiter=",", skiprows=1)[::1]
@@ -220,8 +220,8 @@ def PlotCombo():
     pp.title("Frequency versus noise and gain")
     pp.savefig('/home/deola/Documents/Paper_for_Bottle_classification/smith4.eps', format='eps', dpi=300)
     print("Finish plotting")    
-    
-def addarr(ar):
+#########################################################################################################    
+def add_arr(ar):
     for i in ar:
         i+=i
     print i
@@ -232,12 +232,12 @@ def addarr(ar):
 
 if __name__=="__main__":
     
-    #DataClean()
-    #GetArray(2,3)
-    #PolarToRectangluar(4,5)
-    #CreateCSV("MANI_CIRUIT.Val.csv")
-    #ExecToCSV()
-    #SmithPlotting("MANI_CIRUIT.Val.csv")
-    #PlotNoise()
-    #PlotGain()
-    #PlotCombo()
+    #data_clean()
+    #get_array(2,3)
+    #polar_to_rectangluar(4,5)
+    #create_csv("MANI_CIRUIT.Val.csv")
+    #exec_to_csv()
+    #smith_plotting("MANI_CIRUIT.Val.csv")
+    #plot_noise()
+    #plot_gain()
+    #plot_combo()
